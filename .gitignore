@@ -1,0 +1,16 @@
+# Context OS — keep private overlays out of git by default.
+# The *.example.md templates stay tracked; the real files never get committed.
+
+YOU_PRIVATE.md
+YOU_CAREER_PRIVATE.md
+
+# If you add more private overlays, ignore them here too:
+# *_PRIVATE.md
+# (note: that pattern would also ignore the .example.md files — list real names instead)
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
