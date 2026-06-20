@@ -31,6 +31,16 @@ When context conflicts, use this order:
 
 Private overlays are not part of the default source-of-truth chain unless the user explicitly authorizes them for the current task.
 
+## Cross-Agent Truth Model
+
+Context OS is built for **many AI tools writing to one shared context over time**. It should converge toward a single maintained current state, not accumulate a pile of competing observations. This is the part that makes it portable across tools rather than a static doc one model reads.
+
+- **Each tool is a partial witness, not an author.** Any given agent (Claude, Codex, a chat model, a repo, a live site) sees only a slice of reality. No version is automatically "primary" because it came first or last.
+- **Provenance while reconciling, then promote.** While a fact is still unsettled, tag it (observed / reported / inferred / confirmed) and keep the provenance. Once it's confirmed, promote it into plain current-state language and drop the scaffolding — so the system resolves instead of rotting into permanent contradiction.
+- **Reopen provenance only on conflict.** Settled facts stay settled. Don't re-litigate everything each session; reopen provenance only for the specific fact a new contradiction breaks.
+- **Order-independent convergence.** Aim to land on the same canonical context regardless of which tool touched the files first. To get there you may augment, consolidate, reframe, de-emphasize, or remove material — no agent's earlier version is owed deference.
+- **The user's direct correction always wins** and is promoted to current state immediately.
+
 ## Load Levels
 
 ### Level 0 — Minimal Orientation
